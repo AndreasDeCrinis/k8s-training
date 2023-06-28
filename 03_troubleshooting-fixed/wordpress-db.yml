@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: mysqls:5.7
+        image: mysql:5.7
         env:
         - name: MYSQL_RANDOM_ROOT_PASSWORD
           value: "1"
@@ -41,6 +41,7 @@ spec:
       resources:
         requests:
           storage: 1Gi
+
 ---
 apiVersion: v1
 kind: Service
@@ -52,5 +53,5 @@ spec:
     app: mysql
   ports:
   - protocol: TCP
-    port: 3307
-    targetPort: 3307
+    port: 3306
+    targetPort: 3306

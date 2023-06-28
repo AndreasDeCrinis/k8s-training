@@ -8,7 +8,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
+      storage: 10Gi
   storageClassName: default
 ---
 apiVersion: apps/v1
@@ -52,8 +52,8 @@ spec:
           name: container-0
           resources:
             requests:
-              cpu: 1000000m
-              memory: 20000000Mi
+              cpu: 100m
+              memory: 200Mi
           securityContext:
             allowPrivilegeEscalation: false
             privileged: false
@@ -106,7 +106,7 @@ spec:
           service:
             name: wordpress
             port:
-              number: 8080
+              number: 80
   tls:
   - hosts:
     - wordpress.k8s.decrinis.com
